@@ -1,0 +1,77 @@
+//Defining The Class to store the data
+
+public class Data {
+    private int id;
+    private String value;
+}
+
+//Setting Up the interface
+
+
+public interface DataRepository {
+    Data findById(int id);
+    void save(Data data);
+    boolean deleteById(int id);
+}
+
+
+// The Code
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@SpringBootApplication
+@RestController
+@RequestMapping("/api")
+public class SimpleRestController {
+
+    private DataRepository dataRepository;
+
+    public SimpleRestController(DataRepository dataRepository) {
+        this.dataRepository = dataRepository;
+    }
+
+    @GetMapping("/data/{id}")
+    public ResponseEntity<Data> getData(@PathVariable int id) {
+        Data data = dataRepository.findById(id);
+        if (data != null) {
+            return new ResponseEntity<>(data, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/data")
+    public ResponseEntity<String> addData(@RequestBody Data data) {
+        dataRepository.save(data);
+        return new ResponseEntity<>("Data added successfully", HttpStatus.CREATED);
+    }
+
+    @PutMapping("/data/{id}")
+    public ResponseEntity<String> updateData(@PathVariable int id, @RequestBody Data newData) {
+        Data existingData = dataRepository.findById(id);
+        if (existingData != null) {
+            existingData.setValue(newData.getValue());
+            return new ResponseEntity<>("Data updated successfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/data/{id}")
+    public ResponseEntity<String> deleteData(@PathVariable int id) {
+        boolean deleted = dataRepository.deleteById(id);
+        if (deleted) {
+            return new ResponseEntity<>("Data deleted successfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(SimpleRestController.class, args);
+    }
+}

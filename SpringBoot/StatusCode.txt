@@ -1,0 +1,13 @@
+200 OK: Successful retrieval of a resource.
+
+201 Created: Successful creation of a new resource.
+
+400 Bad Request: Invalid request syntax or parameters.
+
+401 Unauthorized: Authentication is required to access the resource.
+
+404 Not Found: The requested resource could not be found.
+
+500 Internal Server Error: Unexpected server error occurred.
+
+By using appropriate status codes, you can provide clear communication between the server and client, improving the usability and reliability of your RESTful API.
