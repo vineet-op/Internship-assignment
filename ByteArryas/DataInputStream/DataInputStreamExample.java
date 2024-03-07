@@ -1,3 +1,5 @@
+package DataInputStream;
+
 import java.io.*;
 
 public class DataInputStreamExample {
