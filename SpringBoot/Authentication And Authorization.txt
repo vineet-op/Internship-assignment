@@ -1,0 +1,13 @@
+Authentication:
+Authentication is the process of verifying the identity of a user or system making a request. It ensures that the requester is who they claim to be. In web applications and APIs, authentication commonly involves the use of credentials, such as usernames and passwords, tokens.
+
+
+1) Basic Authentication: In basic authentication, the client includes a username and password in the request headers. While simple, it's not considered secure because credentials are sent in plaintext and can be intercepted.
+
+2) Token-based Authentication: With token-based authentication, the client sends a token with each request after initially authenticating with a username and password. The server verifies the token's authenticity and grants access accordingly. Tokens can be JWTs (JSON Web Tokens), OAuth tokens, or other types of tokens.
+
+3) OAuth: OAuth is an authorization framework that allows third-party services to access a user's resources without exposing their credentials. It's commonly used for delegated authorization, where a user grants a third-party application limited access to their resources.
+
+
+Authorization is the process of determining whether a user or system has permission to access a particular resource or perform a specific action. Once a user is authenticated, authorization determines what they are allowed to do within the system.
+
