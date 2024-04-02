@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Example</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Headers */
+        h1,
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Basic Selectors */
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        /* Combinational Selectors */
+        .feature {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Pseudo-selectors */
+        p:first-of-type {
+            font-weight: bold;
+        }
+
+        /* Specificity */
+        #specificity-example {
+            color: red;
+        }
+
+        /* Box Model */
+        .box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 1px solid black;
+            margin: 20px auto;
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        /* Fonts & Typography */
+        .heading {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Colors */
+        .red-text {
+            color: red;
+        }
+
+        /* Positioning */
+        .absolute {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Units (absolute, relative) */
+        .pixels {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .percentage {
+            width: 50%;
+            height: 100px;
+            margin: 20px auto;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        /* Overflow */
+        .overflow-example {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            overflow: auto;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        /* Float */
+        .float-example {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-right: 10px;
+        }
+
+        /* Display & Flex */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Welcome to CSS Example</h1>
+
+        <section>
+            <h2>Basic Selectors</h2>
+            <p>Hello, world!</p>
+        </section>
+
+        <section>
+            <h2>Combinational Selectors</h2>
+            <div class="feature">Feature 1</div>
+            <div class="feature">Feature 2</div>
+        </section>
+
+        <section>
+            <h2>Pseudo-selectors</h2>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </section>
+
+        <section>
+            <h2>Specificity</h2>
+            <p id="specificity-example">Specificity Example</p>
+        </section>
+
+        <section>
+            <h2>Box Model</h2>
+            <div class="box">Box</div>
+        </section>
+
+        <section>
+            <h2>Fonts & Typography</h2>
+            <p class="heading">Heading with custom font</p>
+        </section>
+
+        <section>
+            <h2>Colors</h2>
+            <p class="red-text">Red Text</p>
+        </section>
+
+        <section>
+            <h2>Positioning</h2>
+            <div class="absolute">Absolute</div>
+            <div class="relative">Relative</div>
+        </section>
+
+        <section>
+            <h2>Units (absolute, relative)</h2>
+            <div class="pixels">200px x 200px</div>
+            <div class="percentage">50% x 100px</div>
+        </section>
+
+        <section>
+            <h2>Overflow</h2>
+            <div class="overflow-example">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus lacinia mi at malesuada.
+                Integer scelerisque auctor lectus, non malesuada elit commodo ut. Duis mollis vehicula metus,
+                vitae dapibus orci vehicula id. Donec auctor felis non augue dignissim, nec viverra lacus efficitur.
+                Nullam sit amet velit fermentum, rhoncus lorem vel, vehicula dui. Phasellus id ultrices tortor,
+                id sollicitudin neque. Aliquam fringilla eros velit, nec suscipit purus euismod at.
+                Phasellus nec pharetra enim.
+            </div>
+        </section>
+
+        <section>
+            <h2>Float</h2>
+            <div class="float-example"></div>
+            <div class="float-example"></div>
+            <div class="float-example"></div>
+        </section>
+
+        <section>
+            <h2>Display & Flex</h2>
+            <div class="flex-container">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
